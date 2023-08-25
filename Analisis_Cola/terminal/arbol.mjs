@@ -59,11 +59,14 @@ export class Arbol{
 		let mayor = 0
 		let proceso = null
 		for(const [key, value] of Object.entries(this.datos)){
-			if(value > mayor){
-				mayor = value
-				proceso = key
-			}	
+			if(key !== 'inicio' && key !== 'final'){
+				if(value > mayor){
+					mayor = value
+					proceso = key
+				}
+				console.log(`${key} : ${value}`)
+			}
 		}
-		console.log(`El cuello de botella esta en el proceso ${proceso} \nse recomienda agregar mas estaciones de este proceso o optimizar internamente el proceso`)
+		console.log(`El cuello de botella esta en el proceso ${proceso} \nse recomienda agregar mas estaciones de este proceso u optimizar internamente el proceso`)
 	}
 }
